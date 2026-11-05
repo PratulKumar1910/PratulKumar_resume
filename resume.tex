@@ -20,6 +20,9 @@
 \newcommand{\projectHeadingWithDate}[4]{\Project{#1}{#2}
 \descript{#3 | #4}\\}
 
+% Vertical gap between organisations in Work Experience
+\newcommand{\orgsep}{\vspace{10pt}}
+
 % Project title under a job. Parameters: project name
 \newcommand{\projectTitle}[1]{\par\vspace{2pt}\noindent\textbf{#1}\par}
 
@@ -122,6 +125,7 @@
     \item Made app onboarding config-driven via a JSON entry per app (name, details, redirect URL, thumbnail)
 \end{bullets}
 
+\orgsep
 \resumeHeading{Nference Labs}{Senior Software Engineer}{}{Feb 2023 - Jun 2025}
 
 \projectTitle{ChatECG}
@@ -148,8 +152,8 @@
     \item Optimised the app by integrating React's Context API replacing prop drilling throughout the app
     \item Handled on-site deployments at 4 sites, production testing, and user feedback for UX refinements
 \end{bullets}
-\sectionsep
 
+\orgsep
 \resumeHeading{Oracle}{Applications Engineer}{}{Jul 2022 – Feb 2023}
 \begin{bullets}
     \item Transition of HCM Transaction Framework from  \textbf{\href{https://docs.oracle.com/middleware/1212/adf/ADFCG/intro.htm\#ADFCG111}{Oracle ADF}} tech stack to modern VBCS framework
@@ -159,8 +163,8 @@
     % \item Devised and deployed the infrastructure in TypeScript through \textbf{AWS CDK}, then created efficient algorithms to process data from a custom \textbf{REST API}, so it could scale to handle millions of deliveries.
     % \item Setup a CI/CD pipeline and exceeded requirements in each stage, which lead to the application being pushed to production.
 \end{bullets}
-\sectionsep
 
+\orgsep
 \resumeHeading{Lowe's India}{Software Engineer- 2x Spot Award}{}{Aug 2020 - Jul 2022}
 \projectTitle{LIFT- Crystal}
 
@@ -228,11 +232,17 @@
 %--------------------------------------------------------------
 \section{Skills}
 \begin{skillList}
-    \singleItem{Languages:}{JavaScript, Java(Spring), Python}
+    \singleItem{Languages:}{JavaScript, Java (Spring), Python}
     \\
-    \singleItem{Development:}{ReactJs, ThreeJS, Redux, JSP, HTML/CSS, SwiftUI}
+    \singleItem{Frontend:}{ReactJS, Redux, Context API, Three.js, WebGL, Web Workers, Server-Sent Events, JSP, HTML/CSS}
     \\
-    \singleItem{Technology:}{Docker, GCP, ArgoCD, Jenkins}
+    \singleItem{Auth \& Infra:}{Envoy Gateway, Auth0, Firebase Auth, Docker, GCP, ArgoCD, Jenkins, CI/CD}
+    \\
+    \singleItem{AI Engineering:}{Prompt engineering, context engineering, Claude Code, Model Context Protocol (MCP) server setup \& integration}
+    \\
+    \singleItem{AI Automation:}{Agentic coding workflows, AI-assisted design-to-code (Figma MCP), LLM-driven workflow automation}
+    \\
+    \singleItem{Design:}{Figma, design-token based theming, design-to-code workflows}
 \end{skillList}
 
 % A more concise alternate 
