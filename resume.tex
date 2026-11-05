@@ -88,12 +88,12 @@
 \projectTitle{EAM Viewer}
 
 \begin{bullets}
-    \item Designed and developed a full-stack cardiac electrophysiology visualization platform in \textbf{ReactJS} for processing \textbf{CARTO} EAM (Electro-Anatomical Mapping) data, enabling clinicians to analyze 3D cardiac mesh models, ECG/EGM signals, and ablation metrics
+    \item Built a full-stack \textbf{ReactJS} platform to visualize \textbf{CARTO} Electro-Anatomical Mapping (EAM) data, letting clinicians analyze 3D cardiac meshes, ECG/EGM signals and ablation metrics
     \item Achieved 98\% performance improvement (4-9 seconds -> ~110ms) in CT mesh loading by implementing geometry sharing architecture between viewers, eliminating redundant PLY parsing through in-memory geometry reuse
     \item Implemented \textbf{Web Worker}-based histogram computation for MetricLegend component, offloading heavy calculations from the main thread to maintain smooth 60fps interactions during metric data analysis
-    \item Developed a pure JS, EAM visualization library using \textbf{Three.js} and \textbf{WebGL}, enabling real-time rendering of heart mesh models with per-vertex metric-based color mapping, interactive ablation/mapping point overlays and dynamic clip-range adjustments exposed through event-driven public API
+    \item Developed a pure JS EAM visualization library using \textbf{Three.js} and \textbf{WebGL} for real-time heart mesh rendering with per-vertex metric coloring, ablation/mapping point overlays and clip-range controls via an event-driven API
     \item Optimized rendering performance for large cardiac mesh datasets by implementing \textbf{BVH-accelerated raycasting}, buffer attribute reuse, palette caching, and single-pass O(n) vertex coloring
-    \item Implementation of \textbf{DataParquets} for faster read and write operations on data of over 100k rows and 50+ columns in a csv file resulting in 90\% faster response time
+    \item Used \textbf{DataParquets} for reads and writes on 100k+ row, 50+ column CSV data, cutting response time by 90\%
 \end{bullets}
 
 \projectTitle{Clinical Study Platform}
@@ -109,32 +109,21 @@
 \projectTitle{ECG-AI Order Tracking}
 
 \begin{bullets}
-    \item Built an internal \textbf{ReactJS} dashboard tracking ECG-AI orders received from each client and their status (completed, pending, failed)
-    \item Built a reconciliation table comparing client-reported order counts against orders recorded in our database to surface discrepancies
-    \item Added a toggleable volume chart view showing daily and cumulative orders per customer, with preset ranges (past week, month, quarter) and a calendar-based custom date range selector
-    \item Added filters by customer and order status, and export of reports and screenshots for selected customers to share data with them
+    \item Built an internal \textbf{ReactJS} dashboard tracking ECG-AI orders per client by status (completed, pending, failed)
+    \item Built a reconciliation table comparing client-reported order counts with our database to surface discrepancies
+    \item Added a daily/cumulative order volume chart per customer with week, month, quarter and custom date ranges
+    \item Added customer and order-status filters, plus report and screenshot export to share data with customers
 \end{bullets}
 
 \projectTitle{Preview Platform Landing Page}
 
 \begin{bullets}
-    \item Built a \textbf{ReactJS} landing page for the Anumana preview environment, protected behind \textbf{Envoy Gateway}, listing all preview apps by category with one-click redirection to each app
-    \item Made app onboarding config-driven through a JSON definition of each app's name, details, redirect URL and thumbnail, so new apps are listed without code changes
+    \item Built a \textbf{ReactJS} landing page behind \textbf{Envoy Gateway} listing all preview apps by category with one-click redirects
+    \item Made app onboarding config-driven via a JSON entry per app (name, details, redirect URL, thumbnail)
 \end{bullets}
 
 \resumeHeading{Nference Labs}{Senior Software Engineer}{}{Feb 2023 - Jun 2025}
 
-\projectTitle{XML Parser}
-
-\begin{bullets}
-    \item Designed \& built the user interface of an LLM-based chat application which answers user's queries related to ECG
-    \item Integrated \textbf{\href{https://firebase.google.com/docs/auth/web/start}{firebase-auth}} library to add user authentication using Google and Apple sign-in methods
-    \item Streaming of chat response using Server Sent Events to reduce wait time for the user and a better user experience
-    \item Added selection-zoom and zoom-reset functionality in the  \textbf{ecg-viewer}  library for use in ChatECG
-    \item Added support for rendering PDF and Image (.png, .jpg) files from Base64-encoded data by using Blob in JavaScript
-    \item Integrated markdown rendering using  \textbf{\href{https://www.npmjs.com/package/mui-markdown}{mui-markdown}}  for better visualisation of the response generated by the LLM
-\end{bullets}
-    
 \projectTitle{ChatECG}
 
 \begin{bullets}
@@ -143,9 +132,9 @@
     \item Streaming of chat response using Server Sent Events to reduce wait time for the user and a better user experience
     \item Added selection-zoom and zoom-reset functionality in the  \textbf{ecg-viewer}  library for use in ChatECG
     \item Added support for rendering PDF and Image (.png, .jpg) files from Base64-encoded data by using Blob in JavaScript
-    \item Integrated markdown rendering using  \textbf{\href{https://www.npmjs.com/package/mui-markdown}{mui-markdown}}  for better visualisation of the response generated by the LLM
+    \item Integrated \textbf{\href{https://www.npmjs.com/package/mui-markdown}{mui-markdown}} to render LLM responses as formatted markdown
     \item Used pagination to load older chats when the user scrolls up in the chat history
-    \item Developed an iOS app for the same using  \textbf{SwiftUI}
+    \item Built an XML Parser that strips sensitive patient data from raw ECG XML for HIPAA-compliant, confidential uploads
     
     % a Personal Health Record (PHR) system in \textbf{\href{https://spring.io/}{Spring}} based on the theoretical model outlined in \underlinedLink{https://research.library.mun.ca/11920}{Mitu Kumar's thesis}.
     
@@ -154,10 +143,10 @@
 \projectTitle{ECG Viewer UI}
 
 \begin{bullets}
-    \item Worked on a Platform that displays patient ECG history, ECG-AI results, and tools for ECG interpretation and deployed for commercial use generating revenue for the company
+    \item Worked on a revenue-generating platform for patient ECG history, ECG-AI results and interpretation tools
     \item Integrated the ecg-viewer(in-house core JS library) to render ECG waveforms in the React application
     \item Optimised the app by integrating React's Context API replacing prop drilling throughout the app
-    \item Handling on-site deployments on 4 different sites, on-prod testing and feedback from the user to make any minor changes in the experience
+    \item Handled on-site deployments at 4 sites, production testing, and user feedback for UX refinements
 \end{bullets}
 \sectionsep
 
@@ -178,7 +167,7 @@
 \begin{bullets}
     \item Contributed in UI/UX designing and high-level design for the modernisation of LIFT application, created interactive charts and customised tables in \textbf{\href{https://reactjs.org/}{ReactJs}} for sales history and forecast data visualisation
     \item Real-time feedback implemented in Crystal using Slack and Atlassian APIs
-    \item Worked on transition from monolithic to microservices architecture in \textbf{\href{https://spring.io/}{Spring}} for the backend REST APIs and setup of CI/CD pipeline for the project on on-prem Linux servers
+    \item Moved backend REST APIs from a monolith to \textbf{\href{https://spring.io/}{Spring}} microservices and set up CI/CD on on-prem Linux servers
     % a Personal Health Record (PHR) system in \textbf{\href{https://spring.io/}{Spring}} based on the theoretical model outlined in \underlinedLink{https://research.library.mun.ca/11920}{Mitu Kumar's thesis}.
     
     % \href{https://link.springer.com/chapter/10.1007/978-3-642-10838-9\_23}{mCP-ABE} encryption scheme using the \href{http://gas.dia.unisa.it/projects/jpbc/}{JPBC} library, so patients have fine-grained access control over their health records with the ability to instantly revoke access.
@@ -186,7 +175,7 @@
 \projectTitle{DevOps Platform- Thunder}
 
 \begin{bullets}
-    \item Designed and implemented POC using \textbf{JSP} and \textbf{Vanilla JS}, transitioned to Production version of the dashboard using \textbf{ReactJS}
+    \item Built a POC in \textbf{JSP} and \textbf{Vanilla JS}, then the production dashboard in \textbf{ReactJS}
     \item Built REST APIs for handling server-side requests using \textbf{Spring} framework for fetching project details using BitBucket APIs, and creating and setting up configurations for Jenkins project
     \item Scripted automated tasks in \textbf{Python} to provide project configurations in Jenkins, set up Sonar projects and contributed in creating the \textbf{\href{https://www.jenkins.io/doc/book/pipeline/shared-libraries/}{Shared Library}} for CI/CD pipeline
 \end{bullets}
