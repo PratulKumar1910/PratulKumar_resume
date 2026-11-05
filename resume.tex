@@ -88,7 +88,7 @@
 \projectTitle{EAM Viewer}
 
 \begin{bullets}
-    \item Designed and developed a full-stack cardiac electrophysiology visualization platform for processing \textbf{CARTO} EAM (Electro-Anatomical Mapping) data, enabling clinicians to analyze 3D cardiac mesh models, ECG/EGM signals, and ablation metrics
+    \item Designed and developed a full-stack cardiac electrophysiology visualization platform in \textbf{ReactJS} for processing \textbf{CARTO} EAM (Electro-Anatomical Mapping) data, enabling clinicians to analyze 3D cardiac mesh models, ECG/EGM signals, and ablation metrics
     \item Achieved 98\% performance improvement (4-9 seconds -> ~110ms) in CT mesh loading by implementing geometry sharing architecture between viewers, eliminating redundant PLY parsing through in-memory geometry reuse
     \item Implemented \textbf{Web Worker}-based histogram computation for MetricLegend component, offloading heavy calculations from the main thread to maintain smooth 60fps interactions during metric data analysis
     \item Developed a pure JS, EAM visualization library using \textbf{Three.js} and \textbf{WebGL}, enabling real-time rendering of heart mesh models with per-vertex metric-based color mapping, interactive ablation/mapping point overlays and dynamic clip-range adjustments exposed through event-driven public API
@@ -99,7 +99,7 @@
 \projectTitle{Clinical Study Platform}
 
 \begin{bullets}
-    \item Built the UI of a data validation platform used by the clinical team to verify real-world data sent by CROs after a SaMD approval, translating designs into components with \textbf{Figma MCP} and \textbf{Claude Code}
+    \item Built the \textbf{ReactJS} UI of a data validation platform used by the clinical team to verify real-world data sent by CROs after a SaMD approval, translating designs into components with \textbf{Figma MCP} and \textbf{Claude Code}
     \item Wrote a pure JS auth library integrated with \textbf{Envoy Gateway} and \textbf{Auth0} that manages refresh cookies, redirects logged-out users to login, and fetches user details to resolve each user's roles across all apps in the org
     \item Implemented role-based access for 3 user roles (Study Managers, Platform Ops, Data Engineers), using the roles resolved by the auth library to expose only the tabs and actions each role is permitted
     \item Built status polling to track each dataset through the validation pipeline (queued, running checks, passed/failed basic checks, pending advanced checks), with filters to view datasets by status
@@ -109,10 +109,17 @@
 \projectTitle{ECG-AI Order Tracking}
 
 \begin{bullets}
-    \item Built an internal dashboard tracking ECG-AI orders received from each client and their status (completed, pending, failed)
+    \item Built an internal \textbf{ReactJS} dashboard tracking ECG-AI orders received from each client and their status (completed, pending, failed)
     \item Built a reconciliation table comparing client-reported order counts against orders recorded in our database to surface discrepancies
     \item Added a toggleable volume chart view showing daily and cumulative orders per customer, with preset ranges (past week, month, quarter) and a calendar-based custom date range selector
     \item Added filters by customer and order status, and export of reports and screenshots for selected customers to share data with them
+\end{bullets}
+
+\projectTitle{Preview Platform Landing Page}
+
+\begin{bullets}
+    \item Built a \textbf{ReactJS} landing page for the Anumana preview environment, protected behind \textbf{Envoy Gateway}, listing all preview apps by category with one-click redirection to each app
+    \item Made app onboarding config-driven through a JSON definition of each app's name, details, redirect URL and thumbnail, so new apps are listed without code changes
 \end{bullets}
 
 \resumeHeading{Nference Labs}{Senior Software Engineer}{}{Feb 2023 - Jun 2025}
