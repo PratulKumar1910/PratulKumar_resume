@@ -1,0 +1,244 @@
+\documentclass[]{resume-openfont}
+
+\pagestyle{fancy}
+\resetHeaderAndFooter
+
+%--------------------------------------------------------------
+% Convenience command - make it easy to fill template
+
+% Create job position command. Parameters: company, position, location, when
+\newcommand{\resumeHeading}[4]{\runsubsection{\uppercase{#1}}\descript{ | #2}\hfill\location{#3  #4}\fakeNewLine}
+
+% Create education heading. Parameters: Name, degree, location, when
+\newcommand{\educationHeading}[4]{\runsubsection{#1}\hspace*{\fill}  \location{#3  #4}\\
+\descript{#2}\fakeNewLine}
+
+% Create project heading. Parameters: Name, link, Tech stack
+\newcommand{\projectHeading}[3]{\Project{#1}{#2}
+\descript{#3}\\}
+
+\newcommand{\projectHeadingWithDate}[4]{\Project{#1}{#2}
+\descript{#3 | #4}\\}
+
+% Parameters: courses
+\newcommand{\courseWork}[1]{\textbf{Coursework:} #1}
+
+% Parameters: courses
+\newcommand{\teacherAssistant}[1]{\textbf{Teacher Assistant (TA):} #1}
+ 
+%--------------------------------------------------------------
+\begin{document}
+
+%--------------------------------------------------------------
+%     Profile
+%--------------------------------------------------------------
+\newcommand{\yourName}{Pratul Kumar}
+% How you want it to show up on the resume
+% \newcommand{\yourWebsite}{website.com}
+% vs how you want it to show up. If it's the same you can just replace "\yourWebsiteLink" with "yourWebsite"
+% \newcommand{\yourWebsiteLink}{https://website.com}
+\newcommand{\yourEmail}{pratulkumar1998@gmail.com}
+\newcommand{\yourPhone}{+91-7020470500}
+% \newcommand{\githubUserName}{myGithubName}
+\newcommand{\linkedInUserName}{pratul-kumar}
+
+% An alternate profile section 
+% \alignProfileTable
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%     \ralewayBold{\href{\yourWebsiteLink}{\Large \yourName}} & 
+%     Email : \href{mailto:\yourEmail}{\yourEmail}
+%     \\
+%     \href{https://github.com/\githubUserName}{GitHub://\githubUserName} & 
+%     Mobile : \yourPhone
+%     \\
+%     \href{https://www.linkedin.com/in/\linkedInUserName}{LinkedIn://\linkedInUserName} & Website : \href{\yourWebsiteLink}{\yourWebsite}
+%     \\
+% \end{tabular*}
+
+\begin{center}
+    \Huge \scshape \latoRegular{\yourName} \\ \vspace{1pt}
+    \small \href{mailto:\yourEmail}{\underline{\yourEmail}}  $|$  \yourPhone $|$ 
+    \href{https://www.linkedin.com/in/\linkedInUserName}{\underline{linkedIn/\linkedInUserName}} 
+    % $|$
+    % \href{https://github.com/\githubUserName}{\underline{github/\githubUserName}} 
+    % $|$ \href{\yourWebsiteLink}{\underline{\yourWebsite}}
+\end{center}
+
+\begin{flushleft}
+\large
+I, Pratul Kumar, am open to relocation and willing to move to Prague should I be selected for the position.
+\end{flushleft}
+    
+%--------------------------------------------------------------
+%     Education
+%--------------------------------------------------------------
+\section{Education}
+% Put school first and degree second if your school is reputable
+\educationHeading{Visvesvaraya National Institute of Technology(VNIT), Nagpur}{B.Tech Electronics and Communication Engineering}{}{Jun 2020}
+
+% \teacherAssistant{World Wide Web Information Systems Development}
+% \courseWork{Data Structures and Algorithms; Operating Systems;  Computer Security; Software Testing; Advanced Networking; Big Data Analytics}
+\sectionsep
+
+%--------------------------------------------------------------
+%     Experience
+%--------------------------------------------------------------
+\section{Work Experience}
+\resumeHeading{Anumana Labs}{Senior Software Engineer}{}{Jul 2025 - Oct 2026}
+
+\begin{multiline}
+    \item EAM Viewer
+\end{multiline}
+
+\begin{bullets}
+    \item Designed and developed a full-stack cardiac electrophysiology visualization platform for processing \textbf{CARTO} EAM (Electro-Anatomical Mapping) data, enabling clinicians to analyze 3D cardiac mesh models, ECG/EGM signals, and ablation metrics
+    \item Achieved 98\% performance improvement (4-9 seconds -> ~110ms) in CT mesh loading by implementing geometry sharing architecture between viewers, eliminating redundant PLY parsing through in-memory geometry reuse.
+    \item Implemented \textbf{Web Worker}-based histogram computation for MetricLegend component, offloading heavy calculations from the main thread to maintain smooth 60fps interactions during metric data analysis.
+    \item Developed a pure JS, EAM visualization library using \textbf{Three.js} and \textbf{WebGL}, enabling real-time rendering of heart mesh models with per-vertex metric-based color mapping, interactive ablation/mapping point overlays and dynamic clip-range adjustments exposed through event-driven public API.
+    \item Optimized rendering performance for large cardiac mesh datasets by implementing \textbf{BVH-accelerated raycasting}, buffer attribute reuse, palette caching, and single-pass O(n) vertex coloring.
+    \item Implementation of \textbf{DataParquets} for faster read and write operations on data of over 100k rows and 50+ columns in a csv file resulting in 90\% faster response time
+\end{bullets}
+
+\resumeHeading{Nference Labs}{Senior Software Engineer}{}{Feb 2023 - Jun 2025}
+
+\begin{multiline}
+    \item XML Parser
+\end{multiline}
+
+\begin{bullets}
+    \item Designed \& built the user interface of an LLM-based chat application which answers user's queries related to ECG
+    \item Integrated \textbf{\href{https://firebase.google.com/docs/auth/web/start}{firebase-auth}} library to add user authentication using Google and Apple sign-in methods 
+    \item Streaming of chat response using Server Sent Events to reduce wait time for the user and a better user experience
+    \item Added selection-zoom and zoom-reset functionality in the  \textbf{ecg-viewer}  library for use in ChatECG
+    \item Added support for rendering PDF and Image (.png, .jpg) files from 64-bit encoded data by using Blob in JavaScript 
+    \item Integrated markdown rendering using  \textbf{\href{https://www.npmjs.com/package/mui-markdown}{mui-markdown}}  for better visualisation of the response generated by the LLM
+\end{bullets}
+    
+\begin{multline}
+        \item ChatECG
+\end{multline}
+
+\begin{bullets}
+    \item Designed \& built the user interface of an LLM-based chat application which answers user's queries related to ECG
+    \item Integrated \textbf{\href{https://firebase.google.com/docs/auth/web/start}{firebase-auth}} library to add user authentication using Google and Apple sign-in methods 
+    \item Streaming of chat response using Server Sent Events to reduce wait time for the user and a better user experience
+    \item Added selection-zoom and zoom-reset functionality in the  \textbf{ecg-viewer}  library for use in ChatECG
+    \item Added support for rendering PDF and Image (.png, .jpg) files from 64-bit encoded data by using Blob in JavaScript 
+    \item Integrated markdown rendering using  \textbf{\href{https://www.npmjs.com/package/mui-markdown}{mui-markdown}}  for better visualisation of the response generated by the LLM
+    \item Used pagination to load older chats when the user scrolls up in the chat history 
+    \item Developed an iOS app for the same using  \textbf{SwiftUI}  
+    
+    % a Personal Health Record (PHR) system in \textbf{\href{https://spring.io/}{Spring}} based on the theoretical model outlined in \underlinedLink{https://research.library.mun.ca/11920}{Mitu Kumar's thesis}.
+    
+    % \href{https://link.springer.com/chapter/10.1007/978-3-642-10838-9\_23}{mCP-ABE} encryption scheme using the \href{http://gas.dia.unisa.it/projects/jpbc/}{JPBC} library, so patients have fine-grained access control over their health records with the ability to instantly revoke access.
+\end{bullets}
+\begin{multline}
+    \item Anumana ECG-Viewer
+\end{multline}
+
+\begin{bullets}
+    \item Worked on a Platform that displays patient ECG history, ECG-AI results, and tools for ECG interpretation and deployed for commercial use generating revenue for the company
+    \item Integrated the ecg-viewer(in-house core JS library) to render ECG waveforms in the React application
+    \item Optimised the app by integrating React's Context API replacing prop drilling throughout the app
+    \item Handling on-site deployments on 4 different sites, on-prod testing and feedback from the user to make any minor changes in the experience
+\end{bullets}
+\sectionsep
+
+\resumeHeading{Oracle}{Applications Engineer}{}{July 2022 –  Feb 2023}
+\begin{bullets}
+    \item Transition of HCM Transaction Framework from  \textbf{\href{https://docs.oracle.com/middleware/1212/adf/ADFCG/intro.htm#ADFCG111}{Oracle ADF}} tech stack to modern VBCS framework
+    % \item Designed and implemented a dashboard using \textbf{React} and \textbf{TypeScript} to visualize data stored in \textbf{DynamoDB}, decreasing time to understand delivery driver work sessions by over 10 times.
+    %  \item Here is another bullet that I might choose to uncomment for some jobs
+    % \item Ensured only authorized employees have access to the application by creating an \textbf{AWS Lambda@Edge} function to intercept and sign valid requests.
+    % \item Devised and deployed the infrastructure in TypeScript through \textbf{AWS CDK}, then created efficient algorithms to process data from a custom \textbf{REST API}, so it could scale to handle millions of deliveries.
+    % \item Setup a CI/CD pipeline and exceeded requirements in each stage, which lead to the application being pushed to production.
+\end{bullets}
+\sectionsep
+
+\resumeHeading{Lowe's India}{Software Engineer- 2x Spot Award}{}{Aug 2020 - Jul 2022}
+\begin{multiline}
+    \item LIFT- Crystal
+\end{multiline}
+
+\begin{bullets}
+    \item Contributed in UI/UX designing and high-level design for the modernisation of LIFT application, created interactive charts and customised tables in \textbf{\href{https://reactjs.org/}{ReactJs}} for sales history and forecast data visualisation
+    \item Real-time feedback implemented in Crystal using Slack and Atlassian APIs
+    \item Worked on transition from monolithic to microservices architecture in \textbf{\href{https://spring.io/}{Spring}} for the backend REST APIs and setup of CI/CD pipeline for the project on on-prem Linux servers
+    % a Personal Health Record (PHR) system in \textbf{\href{https://spring.io/}{Spring}} based on the theoretical model outlined in \underlinedLink{https://research.library.mun.ca/11920}{Mitu Kumar's thesis}.
+    
+    % \href{https://link.springer.com/chapter/10.1007/978-3-642-10838-9\_23}{mCP-ABE} encryption scheme using the \href{http://gas.dia.unisa.it/projects/jpbc/}{JPBC} library, so patients have fine-grained access control over their health records with the ability to instantly revoke access.
+\end{bullets}
+\begin{multline}
+    \item DevOps Platform- Thunder
+\end{multline}
+
+\begin{bullets}
+    \item Designed and implemented POC using \textbf{JSP} and \textbf{Vanilla JS}, transitioned to Production version of the dashboard using \textbf{ReactJS}
+    \item Built REST APIs for handling server-side requests using \textbf{Spring} framework for fetching project details using BitBucket APIs, and creating and setting up configurations for Jenkins project
+    \item Scripted automated tasks in \textbf{Python} to provide project configurations in Jenkins, set up Sonar projects and contributed in creating the \textbf{\href{https://www.jenkins.io/doc/book/pipeline/shared-libraries/}{Shared Library}} for CI/CD pipeline
+\end{bullets}
+\sectionsep
+
+% \resumeHeading{JoaTu}{Software Engineer Intern}{Montreal, QC}{Dec 2018 – May 2019}
+% \begin{bullets}
+%     \item Rewrote legacy \textbf{Django code} in \textbf{Ruby in Rails} and refactored it to make the system more extensible.
+%     \item Created \textbf{UML} diagrams and documented where features were implemented, to make the codebase more maintainable.
+% \end{bullets}
+\sectionsep
+
+%--------------------------------------------------------------
+%     Projects
+%--------------------------------------------------------------
+% \section{Projects}
+
+% \projectHeading{B2B Bharat}{https://github.com/Anushka15/b2bBharat}{Java(Spring), JavaScript, HTML/CSS}
+% Created a responsive application to empower and promote local, small and traditional industries which are capable of producing great products and have ability to become global brands. This was for a pan India competition organized by MHRD in July, 2020 \\
+% \sectionsep
+
+% \projectHeading{The Blue Sky Challenge- IEEE}{https://www.hackerearth.com/challenges/hackathon/ieee-machine-learning-hackathon/}{Python, Flask, Heroku}
+% Created a web application to visualise different methods of predicting Air Quality using Forecasting Sensor Measurements in Smart Air quality Monitoring System and deployed on Heroku Cloud Platform\newline
+% Part of the winning team among 1100+ submissions worldwide\\
+% \sectionsep
+
+% \projectHeading{Electrical Maintenance and Parameters(EMAPS)}{}{ExpressJs, NodeJs, MySQL}
+% A data entry and retrieval system for various parameters and details related to the electrical equipment used on-board by the \textbf{Indian Navy}. Further details of the project are confidential\\
+\sectionsep
+  
+
+
+
+
+
+% \projectHeading{War of Weebles}{https://github.com/Aarif123456/GoalOrientedBehaviour}{C\#, Unity, Concurrency, Artificial Intelligence}
+% A capture-the-flag-styled shooting game composed of AI-controlled players. The agents change their goals based on various factors, such as their health, current weapon, their personality and what they see.\\
+% \sectionsep
+
+% Example using bullets and dates 
+% \projectHeadingWithDate{Hogwart\textquotesingle{}s Library Management System}{https://github.com/Aarif123456/hogwartslibrary}{PHP, JavaScript, HTML, CSS, MySQL}{Aug 2019}
+% \begin{bullets}
+    % \item A full-stack library management system, where users can manage books and holds on their accounts. Users can search the library\textquotesingle{}s catalogue, which has every book mentioned in the Harry Potter series. The system distinguishes between 4 users. For examples, librarians who can also check or return books on behalf of users.\\
+% \end{bullets}
+% \sectionsep
+  
+
+%--------------------------------------------------------------
+%     Skills
+%--------------------------------------------------------------
+\section{Skills}
+\begin{skillList}
+    \singleItem{Languages:}{JavaScript, Java(Spring), Python}
+    \\
+    \singleItem{Development:}{ReactJs, ThreeJS, Redux, JSP, HTML/CSS, SwiftUI}
+    \\
+    \singleItem{Technology:}{Docker, GCP, ArgoCD, Jenkins}
+\end{skillList}
+
+% A more concise alternate 
+% \begin{skillList}
+%     \doubleItem{Languages:}{Java(Spring Framework), JavaScript, C++, Python, C\#, PHP, Prolog, Bash, C, Racket}%
+%     {Databases:}{SQL, MongoDB, Neo4j, DynamoDB}
+%     \\
+%     \doubleItem{Web Development:}{JavaScript, TypeScript, React, HTML/CSS}
+%     {Technology:}{Git, AWS, GCP, Azure, Docker, \LaTeX}%
+% \end{skillList}
+\end{document}
