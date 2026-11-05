@@ -100,10 +100,19 @@
 
 \begin{bullets}
     \item Built the UI of a data validation platform used by the clinical team to verify real-world data sent by CROs after a SaMD approval, translating designs into components with \textbf{Figma MCP} and \textbf{Claude Code}
-    \item Implemented role-based access for 3 user roles (Study Managers, Platform Ops, Data Engineers), fetching roles through an API and exposing only the tabs and actions each role is permitted
-    \item Wrote a pure JS auth library that manages refresh cookies and redirects logged-out users to login, integrated with \textbf{Envoy Gateway} and \textbf{Auth0} for login/logout
+    \item Wrote a pure JS auth library integrated with \textbf{Envoy Gateway} and \textbf{Auth0} that manages refresh cookies, redirects logged-out users to login, and fetches user details to resolve each user's roles across all apps in the org
+    \item Implemented role-based access for 3 user roles (Study Managers, Platform Ops, Data Engineers), using the roles resolved by the auth library to expose only the tabs and actions each role is permitted
     \item Built status polling to track each dataset through the validation pipeline (queued, running checks, passed/failed basic checks, pending advanced checks), with filters to view datasets by status
-    \item Added light and dark themes across the application
+    \item Implemented light and dark themes with the in-house design library \textbf{Anu}, whose color tokens were shared with the Figma designs, keeping code and wireframes in sync and speeding up UI development
+\end{bullets}
+
+\projectTitle{ECG-AI Order Tracking}
+
+\begin{bullets}
+    \item Built an internal dashboard tracking ECG-AI orders received from each client and their status (completed, pending, failed)
+    \item Built a reconciliation table comparing client-reported order counts against orders recorded in our database to surface discrepancies
+    \item Added a toggleable volume chart view showing daily and cumulative orders per customer, with preset ranges (past week, month, quarter) and a calendar-based custom date range selector
+    \item Added filters by customer and order status, and export of reports and screenshots for selected customers to share data with them
 \end{bullets}
 
 \resumeHeading{Nference Labs}{Senior Software Engineer}{}{Feb 2023 - Jun 2025}
