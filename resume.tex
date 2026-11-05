@@ -96,6 +96,16 @@
     \item Implementation of \textbf{DataParquets} for faster read and write operations on data of over 100k rows and 50+ columns in a csv file resulting in 90\% faster response time
 \end{bullets}
 
+\projectTitle{Clinical Study Platform}
+
+\begin{bullets}
+    \item Built the UI of a data validation platform used by the clinical team to verify real-world data sent by CROs after a SaMD approval, translating designs into components with \textbf{Figma MCP} and \textbf{Claude Code}
+    \item Implemented role-based access for 3 user roles (Study Managers, Platform Ops, Data Engineers), fetching roles through an API and exposing only the tabs and actions each role is permitted
+    \item Wrote a pure JS auth library that manages refresh cookies and redirects logged-out users to login, integrated with \textbf{Envoy Gateway} and \textbf{Auth0} for login/logout
+    \item Built status polling to track each dataset through the validation pipeline (queued, running checks, passed/failed basic checks, pending advanced checks), with filters to view datasets by status
+    \item Added light and dark themes across the application
+\end{bullets}
+
 \resumeHeading{Nference Labs}{Senior Software Engineer}{}{Feb 2023 - Jun 2025}
 
 \projectTitle{XML Parser}
