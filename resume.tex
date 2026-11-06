@@ -95,9 +95,10 @@
     \item Built the data-processing pipeline that parses raw CARTO exports into a schema-structured database of per-map anatomical meshes, mapping points, ECG/EGM signals and ablation lesions
     \item Converted VTK meshes to PLY and registered EAM meshes to CT meshes in a shared coordinate space
     \item Built a \textbf{FastAPI} backend reading large datasets via \textbf{Parquet}, cutting response time by 90\% on 100k+ row tables, with client-side 3D mesh caching
-    \item Added filtering of mapping points by radial distance from a chosen point of interest
+    \item Filtered mapping and ablation points by distance, and ablation points by time, from a chosen point of interest
     \item Achieved 98\% performance improvement (4-9 seconds -> ~110ms) in CT mesh loading by implementing geometry sharing architecture between viewers, eliminating redundant PLY parsing through in-memory geometry reuse
     \item Implemented \textbf{Web Worker}-based histogram computation for MetricLegend component, offloading heavy calculations from the main thread to maintain smooth 60fps interactions during metric data analysis
+    \item Rendered multiple 3D meshes (EAM and CT) at once in the browser, the app's most compute-heavy workload
     \item Developed a pure JS EAM visualization library using \textbf{Three.js} and \textbf{WebGL} for real-time heart mesh rendering with per-vertex metric coloring, ablation/mapping point overlays and clip-range controls via an event-driven API
     \item Optimized rendering performance for large cardiac mesh datasets by implementing \textbf{BVH-accelerated raycasting}, buffer attribute reuse, palette caching, and single-pass O(n) vertex coloring
 \end{bullets}
@@ -124,6 +125,7 @@
     \item Added customer and order-status filters, plus report and screenshot export to share data with customers
 \end{bullets}
 
+\newpage
 \projectTitle{Preview Platform Landing Page}
 
 \begin{bullets}
@@ -181,8 +183,7 @@
 \projectTitle{DevOps Platform- Thunder}
 
 \begin{bullets}
-    \item Built a POC in \textbf{JSP} and \textbf{Vanilla JS}, then the production dashboard in \textbf{ReactJS}
-    \item Built REST APIs for handling server-side requests using \textbf{Spring} framework for fetching project details using BitBucket APIs, and creating and setting up configurations for Jenkins project
+    \item Built a POC in \textbf{JSP} and \textbf{Vanilla JS}, then the production \textbf{ReactJS} dashboard backed by \textbf{Spring} REST APIs that fetch project details from Bitbucket and configure Jenkins projects
     \item Scripted automated tasks in \textbf{Python} to provide project configurations in Jenkins, set up Sonar projects and contributed in creating the \textbf{\href{https://www.jenkins.io/doc/book/pipeline/shared-libraries/}{Shared Library}} for CI/CD pipeline
 \end{bullets}
 \sectionsep
