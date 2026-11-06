@@ -131,18 +131,14 @@
 \projectTitle{ChatECG}
 
 \begin{bullets}
-    \item Designed \& built the user interface of an LLM-based chat application which answers user's queries related to ECG
-    \item Integrated \textbf{\href{https://firebase.google.com/docs/auth/web/start}{firebase-auth}} library to add user authentication using Google and Apple sign-in methods
-    \item Streaming of chat response using Server Sent Events to reduce wait time for the user and a better user experience
-    \item Added selection-zoom and zoom-reset functionality in the  \textbf{ecg-viewer}  library for use in ChatECG
-    \item Added support for rendering PDF and Image (.png, .jpg) files from Base64-encoded data by using Blob in JavaScript
-    \item Integrated \textbf{\href{https://www.npmjs.com/package/mui-markdown}{mui-markdown}} to render LLM responses as formatted markdown
-    \item Used pagination to load older chats when the user scrolls up in the chat history
+    \item Built the \textbf{ReactJS} UI of an LLM-powered ECG copilot backed by \textbf{Python} microservices (\textbf{Flask}, \textbf{FastAPI}) for chat, agent orchestration, ECG analysis and model serving
+    \item Streamed agent responses over \textbf{SSE} with typed status, message and tool events, running each turn on a background thread so it survives client disconnects and resumes via status polling
+    \item Implemented cooperative Stop generation across \textbf{uWSGI} workers with a shared document-DB cancel flag checked between agent steps and during tool streaming
+    \item Worked on a function-calling LLM agent with a config-driven tool registry, a multi-provider LLM wrapper, and versioned prompts overridable at runtime without redeploys
+    \item Added per-user session caps and token budgets, reserved in DB transactions to prevent races and cap LLM cost
+    \item Built an async upload flow with instant image QC, idempotent background ingestion and fan-out to ECG models
     \item Built an XML Parser that strips sensitive patient data from raw ECG XML for HIPAA-compliant, confidential uploads
-    
-    % a Personal Health Record (PHR) system in \textbf{\href{https://spring.io/}{Spring}} based on the theoretical model outlined in \underlinedLink{https://research.library.mun.ca/11920}{Mitu Kumar's thesis}.
-    
-    % \href{https://link.springer.com/chapter/10.1007/978-3-642-10838-9\_23}{mCP-ABE} encryption scheme using the \href{http://gas.dia.unisa.it/projects/jpbc/}{JPBC} library, so patients have fine-grained access control over their health records with the ability to instantly revoke access.
+    \item Added \textbf{Firebase Auth} Google/Apple sign-in, markdown rendering, Base64 file previews and chat pagination
 \end{bullets}
 \projectTitle{ECG Viewer UI}
 
@@ -235,6 +231,8 @@
     \singleItem{Languages:}{JavaScript, Java (Spring), Python}
     \\
     \singleItem{Frontend:}{ReactJS, Redux, Context API, Three.js, WebGL, Web Workers, Server-Sent Events, JSP, HTML/CSS}
+    \\
+    \singleItem{Backend:}{Flask, FastAPI, uWSGI, Spring Boot, REST APIs, Server-Sent Events, microservices, document DBs}
     \\
     \singleItem{Auth \& Infra:}{Envoy Gateway, Auth0, Firebase Auth, Docker, GCP, ArgoCD, Jenkins, CI/CD}
     \\
