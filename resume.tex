@@ -102,11 +102,14 @@
 \projectTitle{Clinical Study Platform}
 
 \begin{bullets}
-    \item Built the \textbf{ReactJS} UI of a data validation platform used by the clinical team to verify real-world data sent by CROs after a SaMD approval, translating designs into components with \textbf{Figma MCP} and \textbf{Claude Code}
-    \item Wrote a pure JS auth library integrated with \textbf{Envoy Gateway} and \textbf{Auth0} that manages refresh cookies, redirects logged-out users to login, and fetches user details to resolve each user's roles across all apps in the org
-    \item Implemented role-based access for 3 user roles (Study Managers, Platform Ops, Data Engineers), using the roles resolved by the auth library to expose only the tabs and actions each role is permitted
-    \item Built status polling to track each dataset through the validation pipeline (queued, running checks, passed/failed basic checks, pending advanced checks), with filters to view datasets by status
-    \item Implemented light and dark themes with the in-house design library \textbf{Anu}, whose color tokens were shared with the Figma designs, keeping code and wireframes in sync and speeding up UI development
+    \item Architected a privacy-preserving clinical data platform (\textbf{Python}, \textbf{FastAPI}, \textbf{MySQL}, \textbf{GCP}) where study teams run AI algorithms and statistics on ECG data for PCCP and device-expansion studies, blind to patient-level data
+    \item Built an ingestion pipeline with a client-side uploader (schema mapping, SHA-256 checksums), background scanning, a four-stage validation engine and staging-to-production promotion
+    \item Designed role-based access control enforced on every API route, with PHI-free validation reports and logs, so analysts only ever see aggregate results
+    \item Built on-demand algorithm execution on ephemeral \textbf{GCE} VMs with zone failover, multi-vendor ECG parsing (GE MUSE, Philips) and device transfer functions
+    \item Built an advanced validation gate that re-runs the cleared SaMD and the CSR analysis package, promoting data only when every reported number matches the original
+    \item Modelled the study $\rightarrow$ experiment $\rightarrow$ analysis $\rightarrow$ approval workflow as restart-safe MySQL state machines with a full audit trail and patient-level usage tracking
+    \item Built the \textbf{ReactJS} UI from Figma with \textbf{Figma MCP} and \textbf{Claude Code}, themed via the in-house \textbf{Anu} design tokens, with role-based tabs and live dataset status polling
+    \item Wrote a pure JS auth library on \textbf{Envoy Gateway} and \textbf{Auth0} that manages refresh cookies, login redirects and per-app role resolution across the org
 \end{bullets}
 
 \projectTitle{ECG-AI Order Tracking}
@@ -232,7 +235,7 @@
     \\
     \singleItem{Frontend:}{ReactJS, Redux, Context API, Three.js, WebGL, Web Workers, Server-Sent Events, JSP, HTML/CSS}
     \\
-    \singleItem{Backend:}{Flask, FastAPI, uWSGI, Spring Boot, REST APIs, Server-Sent Events, microservices, document DBs}
+    \singleItem{Backend:}{Flask, FastAPI, uWSGI, Spring Boot, SQLAlchemy, MySQL, REST APIs, Server-Sent Events, microservices, document DBs}
     \\
     \singleItem{Auth \& Infra:}{Envoy Gateway, Auth0, Firebase Auth, Docker, GCP, ArgoCD, Jenkins, CI/CD}
     \\
