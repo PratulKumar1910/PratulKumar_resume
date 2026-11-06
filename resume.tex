@@ -92,11 +92,14 @@
 
 \begin{bullets}
     \item Built a full-stack \textbf{ReactJS} platform to visualize \textbf{CARTO} Electro-Anatomical Mapping (EAM) data, letting clinicians analyze 3D cardiac meshes, ECG/EGM signals and ablation metrics
+    \item Built the data-processing pipeline that parses raw CARTO exports into a schema-structured database of per-map anatomical meshes, mapping points, ECG/EGM signals and ablation lesions
+    \item Converted VTK meshes to PLY and registered EAM meshes to CT meshes in a shared coordinate space
+    \item Built a \textbf{FastAPI} backend reading large datasets via \textbf{Parquet}, cutting response time by 90\% on 100k+ row tables, with client-side 3D mesh caching
+    \item Added filtering of mapping points by radial distance from a chosen point of interest
     \item Achieved 98\% performance improvement (4-9 seconds -> ~110ms) in CT mesh loading by implementing geometry sharing architecture between viewers, eliminating redundant PLY parsing through in-memory geometry reuse
     \item Implemented \textbf{Web Worker}-based histogram computation for MetricLegend component, offloading heavy calculations from the main thread to maintain smooth 60fps interactions during metric data analysis
     \item Developed a pure JS EAM visualization library using \textbf{Three.js} and \textbf{WebGL} for real-time heart mesh rendering with per-vertex metric coloring, ablation/mapping point overlays and clip-range controls via an event-driven API
     \item Optimized rendering performance for large cardiac mesh datasets by implementing \textbf{BVH-accelerated raycasting}, buffer attribute reuse, palette caching, and single-pass O(n) vertex coloring
-    \item Used \textbf{DataParquets} for reads and writes on 100k+ row, 50+ column CSV data, cutting response time by 90\%
 \end{bullets}
 
 \projectTitle{Clinical Study Platform}
